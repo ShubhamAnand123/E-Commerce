@@ -3,8 +3,8 @@ import {
   ALL_PRODUCT_REQUEST,
   ALL_PRODUCT_SUCCESS,
   PRODUCT_DETAILS_REQUEST,
-  PRODUCT_DETAILS_FAIL,
   PRODUCT_DETAILS_SUCCESS,
+  PRODUCT_DETAILS_FAIL,
   CLEAR_ERRORS,
 } from "../constants/productConstant";
 
@@ -21,6 +21,8 @@ export const productReducer = (state = { products: [] }, action) => {
         loading: false,
         products: action.payload.products,
         productsCount: action.payload.productCount,
+        resultPerPage: action.payload.resultPerPage,
+        filteredproductcount: action.payload.filteredproductcount,
       };
 
     case ALL_PRODUCT_FAIL:
@@ -41,7 +43,7 @@ export const productReducer = (state = { products: [] }, action) => {
 };
 
 
-export const productDetailsReducer = (state = { producthamza: {} }, action) => {
+export const productDetailsReducer = (state = { product:{} }, action) => {
   switch (action.type) {
     case PRODUCT_DETAILS_REQUEST:
       return {

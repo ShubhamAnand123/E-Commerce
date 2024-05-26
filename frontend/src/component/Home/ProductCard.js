@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Rating } from "@material-ui/lab";
 import ReactStars from "react-stars";
 
-const Product = ({ product }) => {
+const ProductCard = ({ product }) => {
   const options = {
     value: product.ratings,
     readOnly: true,
@@ -22,4 +22,4 @@ const Product = ({ product }) => {
   );
 };
 
-export default Product;
+export default ProductCard;
